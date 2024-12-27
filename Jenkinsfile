@@ -25,10 +25,18 @@ pipeline {
             steps {
                 bat '''
                 set PATH=%PYTHON_PATH%;%PATH%
-                sonar-scanner -Dsonar.projectKey=RitikaCICDtest ^
+                
+                //sonar-scanner -Dsonar.projectKey=RitikaCICDtest ^
+                              // -Dsonar.sources=. ^
+                              // -Dsonar.host.url=http://localhost:9000 ^
+                              // -Dsonar.token=%SONAR_TOKEN%
+
+
+                              set PATH=%PYTHON_PATH%;%PATH%
+                              sonar-scanner -Dsonar.projectKey=RitikaCICDtest ^
                               -Dsonar.sources=. ^
                               -Dsonar.host.url=http://localhost:9000 ^
-                              -Dsonar.token=%SONAR_TOKEN%
+                              -Dsonar.token=sqp_34760008e0fda02e341b30ea61a614c1be3505ec
                 '''
             }
         }
